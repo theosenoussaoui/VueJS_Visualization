@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="TEST-AUTO-DÉPLOIMENT"/>
+    <HelloWorld msg="test auto déploiement avec vue js et netifly + branche dev"/>
   </div>
 </template>
 
