@@ -33,3 +33,6 @@ a {
   color: #42b983;
 }
 </style>
+<style lang="scss" scoped>
+  @import "../assets/scss/custom.scss"
+</style>
