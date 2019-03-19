@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="test auto déploiement avec vue js et netifly + branche dev"/>
+    <TestFetchAPI msg="test auto déploiement avec vue js et netifly + branche dev"/>
   </div>
 </template>
 
-<script>
+<!-- <script>
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
@@ -14,6 +14,16 @@ export default {
     HelloWorld
   }
 }
+</script> -->
+
+<script>
+    import TestFetchAPI from './components/TestFetchAPI.vue'
+    export default {
+        name: 'app',
+        components: {
+            TestFetchAPI
+        }
+    }
 </script>
 
 <style>
