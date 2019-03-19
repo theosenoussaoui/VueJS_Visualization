@@ -1,19 +1,21 @@
 <template>
   <div class="uk-container">
     <Navbar/>
-    CONTAINER
+    <Container/>
     <Footer/>
   </div>
 </template>
 
 <script>
   import Navbar from './Navbar.vue'
+  import Container from './Container.vue'
   import Footer from './Footer.vue'
   
   export default {
     name: 'app',
     components: {
       Navbar,
+      Container,
       Footer
     }
   }
