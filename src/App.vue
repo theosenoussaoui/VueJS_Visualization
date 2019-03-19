@@ -1,7 +1,6 @@
 <template>
 	<div id="app">
-		<img alt="Vue logo" src="./assets/logo.png">
-		<Template msg="test chartjs" />
+		<Template/>
 	</div>
 </template>
 

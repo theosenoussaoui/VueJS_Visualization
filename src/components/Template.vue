@@ -1,19 +1,25 @@
 <template>
-  <div class="uk-text-lead">
-   {{ msg }}
+  <div class="uk-container">
+    <Navbar/>
+    CONTAINER
+    <Footer/>
   </div>
 </template>
 
 <script>
-export default {
-    name: 'Template',
-    props: {
-        msg: String
+  import Navbar from './Navbar.vue'
+  import Footer from './Footer.vue'
+  
+  export default {
+    name: 'app',
+    components: {
+      Navbar,
+      Footer
     }
-}
+  }
+
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
@@ -33,6 +39,7 @@ a {
   color: #42b983;
 }
 </style>
+
 <style lang="scss" scoped>
   @import "../assets/scss/custom.scss"
 </style>
