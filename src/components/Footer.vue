@@ -1,5 +1,5 @@
 <template>
-  <div class="copyright">
+  <div class="footer copyright">
     Petit footer de base.
   </div>
 </template>
@@ -8,7 +8,6 @@
   export default {
     name: 'Footer',
   }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

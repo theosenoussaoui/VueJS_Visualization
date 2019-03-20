@@ -1,22 +1,25 @@
 <template>
-  <div class="uk-container">
+  <div>
     <Navbar/>
-    <Container/>
+<!--    <Container/>-->
+    <MapChart/>
     <Footer/>
   </div>
 </template>
 
 <script>
   import Navbar from './Navbar.vue'
-  import Container from './Container.vue'
+//  import Container from './Container.vue'
   import Footer from './Footer.vue'
+  import MapChart from './MapChart'
   
   export default {
     name: 'app',
     components: {
       Navbar,
-      Container,
-      Footer
+//      Container,
+      Footer,
+      MapChart
     }
   }
 

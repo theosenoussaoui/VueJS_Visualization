@@ -1,5 +1,5 @@
 <template>
-    <div class="uk-text-lead">NAVBAR</div>
+    <div class="uk-text-lead navbar">NAVBAR</div>
 </template>
 
 <script>
