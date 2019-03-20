@@ -1,3 +1,13 @@
-.navbar, .footer {
+.container {
+  background-image: linear-gradient(to bottom, #46c3cd, #62d3c2, #8ce1b3, #bceca6, #eef49f);
+}
+
+.uk-logo > img {
+  height: 90px !important;
+  padding: 25px !important;
+}
+
+.uk-navbar, .footer {
   height: 80px;
+  background: transparent;
 }

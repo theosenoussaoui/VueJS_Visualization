@@ -35,7 +35,7 @@
       // Configure series
       var polygonTemplate = polygonSeries.mapPolygons.template;
       polygonTemplate.tooltipText = "{name}";
-      polygonTemplate.fill = am4core.color("#74B266");
+      polygonTemplate.fill = am4core.color("#eee");
 
       // Create hover state and set alternative fill color
       var hs = polygonTemplate.states.create("hover");
