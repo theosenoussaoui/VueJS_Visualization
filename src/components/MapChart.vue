@@ -21,6 +21,7 @@
       chart.seriesContainer.draggable = false;
       chart.seriesContainer.resizable = false;
       chart.maxZoomLevel = 5;
+      chart.hideCredits = true,
 
       // Set map definition
       chart.geodata = am4geodata_worldLow;
@@ -38,11 +39,11 @@
       var polygonTemplate = polygonSeries.mapPolygons.template;
       polygonTemplate.tooltipText = "{name}";
       polygonTemplate.fill = am4core.color("#fff");
-      polygonTemplate.stroke = am4core.color("#46c3cd")
+      polygonTemplate.stroke = am4core.color("#80D4BD")
 
       // Create hover state and set alternative fill color
       var hs = polygonTemplate.states.create("hover");
-      hs.properties.fill = am4core.color("#000");
+      hs.properties.fill = am4core.color("#A7DFB2");
 
       // Remove Antarctica
       polygonSeries.exclude = ["AQ"];
@@ -62,7 +63,7 @@
         event.target.series.chart.zoomToMapObject(event.target);
         if (lastSelected !== event.target) {
           lastSelected = event.target;
-          console.log(event.target);
+//          console.log(event.target);
         }
         //réinitialisation du zoom lors d'un clic sur un pays actif
         else
@@ -100,6 +101,8 @@
       alert('aeraezt');
     }
   });
+  
+  
 
 </script>
 

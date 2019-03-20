@@ -17,7 +17,12 @@
   padding: 25px !important;
 }
 
-.uk-navbar, .footer {
+uk-navbar,
+.footer {
   height: 80px;
   background: transparent;
+}
+
+.uk-padding-large > img {
+  padding-bottom: 70px;
 }
