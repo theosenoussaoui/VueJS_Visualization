@@ -16,9 +16,11 @@
     mounted() {
       // Create map instance
       var chart = am4core.create("chartdiv", am4maps.MapChart);
+
+      // Options
       chart.seriesContainer.draggable = false;
       chart.seriesContainer.resizable = false;
-      chart.maxZoomLevel = 1.5;
+      chart.maxZoomLevel = 5;
 
       // Set map definition
       chart.geodata = am4geodata_worldLow;
@@ -45,23 +47,59 @@
       // Remove Antarctica
       polygonSeries.exclude = ["AQ"];
 
-      // Add some data
-//      polygonSeries.data = [{
-//        "id": "US",
-//        "name": "United States",
-//        "value": 100,
-//        "fill": am4core.color("#F05C5C")
-//      }, {
-//        "id": "FR",
-//        "name": "France",
-//        "value": 50,
-//        "fill": am4core.color("#5C5CFF")
-//      }];
+      //zoom pays
+      var lastSelected;
+      polygonTemplate.events.on("hit", function(event)
+      {
+        if (lastSelected) {
+          // This line serves multiple purposes:
+          // 1. Clicking a country twice actually de-activates, the line below
+          //    de-activates it in advance, so the toggle then re-activates, making it
+          //    appear as if it was never de-activated to begin with.
+          // 2. Previously activated countries should be de-activated.
+          lastSelected.isActive = false;
+        }
+        event.target.series.chart.zoomToMapObject(event.target);
+        if (lastSelected !== event.target) {
+          lastSelected = event.target;
+          console.log(event.target);
+        }
+        //réinitialisation du zoom lors d'un clic sur un pays actif
+        else
+        {
+          chart.goHome();
+          lastSelected = false;
+        }
+      });
+
+      //bouton home
+      let button = chart.chartContainer.createChild(am4core.Button);
+      button.padding(5, 5, 5, 5);
+      button.width = 26;
+      button.fill = "#46C3CD";
+      button.background.fill = "#FFFFFF";
+      button.background.hoverOptions.fill = "#333333";
+      button.align = "right";
+      button.marginRight = 15;
+      button.events.on("hit", function() {
+        chart.goHome();
+        lastSelected = false;
+      });
+      button.icon = new am4core.Sprite();
+      button.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
 
       // Bind "fill" property to "fill" key in data
       polygonTemplate.propertyFields.fill = "fill";
     }
   }
+
+  document.addEventListener('click', function(event)
+  {
+    if (event.target.matches('#chartdiv'))
+    {
+      alert('aeraezt');
+    }
+  });
 
 </script>
 
