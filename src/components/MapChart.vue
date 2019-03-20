@@ -6,7 +6,8 @@
 <script>
   import * as am4core from "@amcharts/amcharts4/core";
   import * as am4maps from "@amcharts/amcharts4/maps";
-  import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
+  import am4lang_fr_FR from "@amcharts/amcharts4/lang/fr_FR";
+  import am4geodata_worldHigh from "@amcharts/amcharts4-geodata/worldHigh";
   import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
   am4core.useTheme(am4themes_animated);
@@ -18,13 +19,14 @@
       var chart = am4core.create("chartdiv", am4maps.MapChart);
 
       // Options
+      chart.language.locale = am4lang_fr_FR;
+      console.log(am4lang_fr_FR);
       chart.seriesContainer.draggable = false;
       chart.seriesContainer.resizable = false;
       chart.maxZoomLevel = 5;
-      chart.hideCredits = true,
-
+      chart.hideCredits = true;
       // Set map definition
-      chart.geodata = am4geodata_worldLow;
+      chart.geodata = am4geodata_worldHigh;
 
       // Set projection
       chart.projection = new am4maps.projections.Miller();
@@ -50,9 +52,10 @@
 
       //zoom pays
       var lastSelected;
-      polygonTemplate.events.on("hit", function(event)
+      polygonTemplate.events.on("hit", async function(event)
       {
-        if (lastSelected) {
+        if (lastSelected)
+        {
           // This line serves multiple purposes:
           // 1. Clicking a country twice actually de-activates, the line below
           //    de-activates it in advance, so the toggle then re-activates, making it
@@ -61,9 +64,10 @@
           lastSelected.isActive = false;
         }
         event.target.series.chart.zoomToMapObject(event.target);
-        if (lastSelected !== event.target) {
+        if (lastSelected !== event.target)
+        {
           lastSelected = event.target;
-//          console.log(event.target);
+          console.log(event.target.dataItem.dataContext);
         }
         //réinitialisation du zoom lors d'un clic sur un pays actif
         else
