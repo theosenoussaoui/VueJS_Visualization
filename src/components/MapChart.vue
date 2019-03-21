@@ -45,13 +45,14 @@
 
       // Create hover state and set alternative fill color
       var hs = polygonTemplate.states.create("hover");
-      hs.properties.fill = am4core.color("#A7DFB2");
+      hs.properties.fill = am4core.color("#19BABA");
 
       // Remove Antarctica
       polygonSeries.exclude = ["AQ"];
 
       //zoom pays
       var lastSelected;
+
       polygonTemplate.events.on("hit", async function(event)
       {
         if (lastSelected)
@@ -70,8 +71,7 @@
           console.log(event.target.dataItem.dataContext);
         }
         //réinitialisation du zoom lors d'un clic sur un pays actif
-        else
-        {
+        else {
           chart.goHome();
           lastSelected = false;
         }
@@ -98,18 +98,22 @@
     }
   }
 
-  document.addEventListener('click', function(event)
-  {
-    if (event.target.matches('#chartdiv'))
-    {
+  document.addEventListener('click', function(event) {
+    if (event.target.matches('#chartdiv')) {
       alert('aeraezt');
     }
   });
-  
-  
 
 </script>
 
 <style lang="scss" scoped>
   @import "../assets/scss/chart.scss"
+
+</style>
+
+<style lang="css" scoped>
+  #chartdiv svg {
+    filter: drop-shadow(3px 3px 0px rgba(25, 186, 186, 1))
+  }
+
 </style>

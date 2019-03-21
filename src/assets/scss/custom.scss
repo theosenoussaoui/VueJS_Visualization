@@ -13,8 +13,8 @@
 }
 
 .uk-logo > img {
-  height: 90px !important;
-  padding: 25px !important;
+  height: 90px;
+  padding: 25px;
 }
 
 uk-navbar,
@@ -25,4 +25,17 @@ uk-navbar,
 
 .uk-padding-large > img {
   padding-bottom: 70px;
+}
+
+.uk-light,
+.uk-navbar-nav > li > a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.uk-navbar-nav > li:hover > a {
+  color: rgba(255, 255, 255, 1);
+}
+
+.uk-navbar-right {
+  padding-right: 25px;
 }

@@ -1,6 +1,6 @@
 # Vue.js application for OZAE API.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ddf767c8-d525-42c5-8a28-e5d3352286ac/deploy-status)](https://app.netlify.com/sites/naughty-ardinghelli-fb1ed9/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1f4f8854-1fad-436c-b6b6-70d3281b097e/deploy-status)](https://app.netlify.com/sites/quirky-torvalds-fa28da/deploys)
 
 ## Project setup
 ```
