@@ -7,10 +7,15 @@
   padding: 25px;
 }
 
-uk-navbar,
-.footer {
+.uk-navbar{
   height: 80px;
   background: transparent;
+}
+
+.footer {
+  height: auto;
+  padding-bottom: 40px;
+  z-index: 50;
 }
 
 .uk-padding-large > img {
@@ -21,6 +26,15 @@ uk-navbar,
 .uk-navbar-nav > li > a {
   color: rgba(255, 255, 255, 0.9);
 }
+
+.uk-modal-dialog .uk-navbar-nav > li > a {
+  color: #19BABA;
+}
+
+.uk-modal-dialog .uk-navbar-nav > li:hover > a {
+  color: #19BABA;  
+}
+
 
 .uk-navbar-nav > li:hover > a {
   color: rgba(255, 255, 255, 1);  
@@ -34,6 +48,45 @@ uk-navbar,
   padding: 5px;
   border: 1px solid #19BABA;
 }
+
+.uk-button > img {
+  width: 140px !important;
+}
+
+footer {
+  padding-bottom: 50px;
+}
+
+.uk-nav li {
+  text-align: left;
+}
+
+.uk-button img {
+  padding: 20px;
+}
+
+.uk-card {
+  margin: 5px;
+}
+
+.uk-button-default {
+  background-color : #fff;
+  color: #000;
+  border-color : #fff;
+}
+
+.uk-button-default:hover {
+  background-color : #fff;
+  color: #000;
+  border-color : #fff;
+}
+
+.uk-modal-body .uk-button-default {
+  background-color : #fff;
+  color: #000;
+  border-color : #e5e5e5;
+}
+
 
 @font-face font-family: 'CenturyGothic'
 src: url('../fonts/CenturyGothic.ttf') format('truetype')

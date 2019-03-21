@@ -32,10 +32,30 @@
 
     <div id="about" class="uk-modal-full" uk-modal>
       <div class="uk-modal-dialog">
+        <nav class="uk-navbar-container" uk-navbar>
+          <div class="uk-navbar-left">
+            <a href class="uk-logo">
+              <img src="img/logo_couleur.png" alt="Logo Daily Map">
+            </a>
+            <ul class="uk-navbar-nav">
+              <li>
+                <a href="#about" uk-toggle>À propos</a>
+              </li>
+              <li>
+                <a href="#whoarewe" uk-toggle>Présentation</a>
+              </li>
+              <li>
+                <a href="#faq" uk-toggle>FAQ</a>
+              </li>
+              <li>
+                <a href="mailto:theosen95@gmail.com">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
         <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
           <div class="uk-padding-large">
-            <img src="img/logo_couleur.png" alt="Logo Couleur Daily Map" width="200">
             <h3>Daily Map permet de visualiser en direct des articles et informations pour un futur départ dans un pays étranger.</h3>
             <h3>À l’aide d’une carte interactive, vous pouvez sélectionner un pays, puis découvrir en fonction de la nature de votre recherche des informations essentielles sur le pays.</h3>
             <h3>Vous souhaitez y aller pour le travail ? Les vacances ou bien pour vos études ? Notre site permet de répondre au mieux à vos questions en fonction de la catégorie sélectionnée.</h3>
@@ -52,10 +72,30 @@
 
     <div id="whoarewe" class="uk-modal-full" uk-modal>
       <div class="uk-modal-dialog">
+        <nav class="uk-navbar-container" uk-navbar>
+          <div class="uk-navbar-left">
+            <a href class="uk-logo">
+              <img src="img/logo_couleur.png" alt="Logo Daily Map">
+            </a>
+            <ul class="uk-navbar-nav">
+              <li>
+                <a href="#about" uk-toggle>À propos</a>
+              </li>
+              <li>
+                <a href="#whoarewe" uk-toggle>Présentation</a>
+              </li>
+              <li>
+                <a href="#faq" uk-toggle>FAQ</a>
+              </li>
+              <li>
+                <a href="mailto:theosen95@gmail.com">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
         <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle uk-margin-top" uk-grid>
           <div class="uk-padding-large">
-            <img src="img/logo_couleur.png" alt="Logo Couleur Daily Map" width="200">
             <h3>En 2019, lors du Hackathon, nous avons créé une carte interactive pour le tourisme à destination des particuliers. Nous pensions qu’il fallait répondre à une vraie demande d’informations venant de toutes ces personnes voulant avoir des renseignements sur un pays étrangers.</h3>
           </div>
           <div
@@ -89,8 +129,8 @@
             style="background-image: url('img/presentation-4.jpg'); background-size : 350px; min-height : 75vh"
           ></div>
           <div class="uk-padding-large">
-            <h3> - Notre réseau de partenaires : Opodo,TripAdvisor,Welink, Hotels.com et AirBnB</h3>
-            <h3> - La qualité de nos partenaires </h3>
+            <h3>- Notre réseau de partenaires : Opodo,TripAdvisor,Welink, Hotels.com et AirBnB</h3>
+            <h3>- La qualité de nos partenaires</h3>
           </div>
         </div>
       </div>
@@ -98,6 +138,27 @@
 
     <div id="faq" class="uk-modal-full" uk-modal>
       <div class="uk-modal-dialog">
+        <nav class="uk-navbar-container" uk-navbar>
+          <div class="uk-navbar-left">
+            <a href class="uk-logo">
+              <img src="img/logo_couleur.png" alt="Logo Daily Map">
+            </a>
+            <ul class="uk-navbar-nav">
+              <li>
+                <a href="#about" uk-toggle>À propos</a>
+              </li>
+              <li>
+                <a href="#whoarewe" uk-toggle>Présentation</a>
+              </li>
+              <li>
+                <a href="#faq" uk-toggle>FAQ</a>
+              </li>
+              <li>
+                <a href="mailto:theosen95@gmail.com">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
         <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
           <div class="uk-padding-large">
