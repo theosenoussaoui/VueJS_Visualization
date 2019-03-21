@@ -60,7 +60,7 @@
                 <div class="uk-card-header">
                   <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
-                      <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                      <img class="uk-border-circle" width="70" height="70" src="img/avatar.jpg">
                     </div>
                     <div class="uk-width-expand">
                       <h3 class="uk-card-title uk-margin-remove-bottom">Titre de l'article</h3>
@@ -82,7 +82,7 @@
                 <div class="uk-card-header">
                   <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
-                      <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                      <img class="uk-border-circle" width="70" height="70" src="img/avatar.jpg">
                     </div>
                     <div class="uk-width-expand">
                       <h3 class="uk-card-title uk-margin-remove-bottom">Titre de l'article</h3>
@@ -104,7 +104,7 @@
                 <div class="uk-card-header">
                   <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
-                      <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                      <img class="uk-border-circle" width="70" height="70" src="img/avatar.jpg">
                     </div>
                     <div class="uk-width-expand">
                       <h3 class="uk-card-title uk-margin-remove-bottom">Titre de l'article</h3>
@@ -126,7 +126,7 @@
                 <div class="uk-card-header">
                   <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
-                      <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                      <img class="uk-border-circle" width="70" height="70" src="img/avatar.jpg">
                     </div>
                     <div class="uk-width-expand">
                       <h3 class="uk-card-title uk-margin-remove-bottom">Titre de l'article</h3>
@@ -148,7 +148,7 @@
                 <div class="uk-card-header">
                   <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
-                      <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                      <img class="uk-border-circle" width="70" height="70" src="img/avatar.jpg">
                     </div>
                     <div class="uk-width-expand">
                       <h3 class="uk-card-title uk-margin-remove-bottom">Titre de l'article</h3>
@@ -170,7 +170,7 @@
                 <div class="uk-card-header">
                   <div class="uk-grid-small uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
-                      <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg">
+                      <img class="uk-border-circle" width="70" height="70" src="img/avatar.jpg">
                     </div>
                     <div class="uk-width-expand">
                       <h3 class="uk-card-title uk-margin-remove-bottom">Titre de l'article</h3>
