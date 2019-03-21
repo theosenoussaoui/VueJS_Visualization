@@ -1,5 +1,5 @@
 <template>
-  <div class="container uk-light">
+  <div class="container">
     <Navbar/>
     <!--    <Container/>-->
     <MapChart/>
