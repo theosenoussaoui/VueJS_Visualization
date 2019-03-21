@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <Navbar/>
-<!--    <Container/>-->
+    <!--    <Container/>-->
     <MapChart/>
     <Footer/>
   </div>

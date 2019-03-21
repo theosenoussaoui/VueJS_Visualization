@@ -1,3 +1,41 @@
-.navbar, .footer {
+//@font-face {
+//  font-family: 'CenturyGothic';
+//  src: url('webfont.eot'); /* IE9 Compat Modes */
+//  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+//       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+//       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+//       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+//}
+
+.container {
+  background-image: linear-gradient(to bottom, #46c3cd, #62d3c2, #8ce1b3, #bceca6, #eef49f);
+}
+
+.uk-logo > img {
+  height: 90px;
+  padding: 25px;
+}
+
+uk-navbar,
+.footer {
   height: 80px;
+  background: transparent;
+}
+
+.uk-padding-large > img {
+  padding-bottom: 70px;
+}
+
+.uk-light,
+.uk-navbar-nav > li > a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.uk-navbar-nav > li:hover > a {
+  color: rgba(255, 255, 255, 1);
+}
+
+.uk-navbar-right {
+  padding-right: 25px;
 }
