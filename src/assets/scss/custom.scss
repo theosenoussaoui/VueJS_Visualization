@@ -1,13 +1,3 @@
-//@font-face {
-//  font-family: 'CenturyGothic';
-//  src: url('webfont.eot'); /* IE9 Compat Modes */
-//  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-//       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
-//       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
-//       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-//       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-//}
-
 .container {
   background-image: linear-gradient(to bottom, #46c3cd, #62d3c2, #8ce1b3, #bceca6, #eef49f);
 }
@@ -17,10 +7,15 @@
   padding: 25px;
 }
 
-uk-navbar,
-.footer {
+.uk-navbar{
   height: 80px;
   background: transparent;
+}
+
+.footer {
+  height: auto;
+  padding-bottom: 40px;
+  z-index: 50;
 }
 
 .uk-padding-large > img {
@@ -32,10 +27,75 @@ uk-navbar,
   color: rgba(255, 255, 255, 0.9);
 }
 
+.uk-modal-dialog .uk-navbar-nav > li > a {
+  color: #19BABA;
+}
+
+.uk-modal-dialog .uk-navbar-nav > li:hover > a {
+  color: #19BABA;  
+}
+
+
 .uk-navbar-nav > li:hover > a {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);  
 }
 
 .uk-navbar-right {
   padding-right: 25px;
 }
+
+.uk-accordion-title::before {
+  padding: 5px;
+  border: 1px solid #19BABA;
+}
+
+.uk-button > img {
+  width: 140px !important;
+}
+
+footer {
+  padding-bottom: 50px;
+}
+
+.uk-nav li {
+  text-align: left;
+}
+
+.uk-button img {
+  padding: 20px;
+}
+
+.uk-card {
+  margin: 5px;
+}
+
+.uk-button-default {
+  background-color : #fff;
+  color: #000;
+  border-color : #fff;
+}
+
+.uk-button-default:hover {
+  background-color : #fff;
+  color: #000;
+  border-color : #fff;
+}
+
+.uk-modal-body .uk-button-default {
+  background-color : #fff;
+  color: #000;
+  border-color : #e5e5e5;
+}
+
+
+@font-face font-family: 'CenturyGothic'
+src: url('../fonts/CenturyGothic.ttf') format('truetype')
+/* Safari, Android, iOS */
+
+@font-face font-family: 'CenturyGothicBold'
+src: url('../fonts/CenturyGothic - Bold.ttf') format('truetype')
+/* Safari, Android, iOS */
+
+@font-face font-family: 'CenturyGothicItalic'
+src: url('../fonts/CenturyGothic - Italic.ttf') format('truetype')
+/* Safari, Android, iOS */
