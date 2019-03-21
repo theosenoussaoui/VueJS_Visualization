@@ -1,5 +1,6 @@
 <template>
-  <div id="chartdiv"></div>
+  <div id="chartdiv">
+  </div>
 </template>
 
 <script>
@@ -168,48 +169,25 @@
       button.events.on("hit", function() {
         chart.goHome();
         lastSelected = false;
-      }
-    });
+      });
+      button.icon = new am4core.Sprite();
+      button.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
 
-    //bouton home
-    let button = chart.chartContainer.createChild(am4core.Button);
-    button.padding(5, 5, 5, 5);
-    button.width = 26;
-    button.fill = "#46C3CD";
-    button.background.fill = "#FFFFFF";
-    // button.background.hoverOptions.fill = "#46C3CD";
-    console.log(button);
-    button.align = "right";
-    button.marginRight = 15;
-    button.events.on("hit", function() {
-      chart.goHome();
-      lastSelected = false;
-    });
-    button.icon = new am4core.Sprite();
-    button.icon.path =
-      "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
-
-    // Bind "fill" property to "fill" key in data
-    polygonTemplate.propertyFields.fill = "fill";
+      // Bind "fill" property to "fill" key in data
+      polygonTemplate.propertyFields.fill = "fill";
+    }
   }
-};
 
-<<<<<<< HEAD
-document.addEventListener("click", function(event) {
-  if (event.target.matches("#chartdiv")) {
-    alert("aeraezt");
-  }
-});
-=======
->>>>>>> e1a68db400ce201ea7c11d5b794980879b443bd4
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/chart.scss";
+  @import "../assets/scss/chart.scss"
+
 </style>
 
 <style lang="css" scoped>
-#chartdiv svg {
-  filter: drop-shadow(3px 3px 0px rgba(25, 186, 186, 1));
-}
+  #chartdiv svg {
+    filter: drop-shadow(3px 3px 0px rgba(25, 186, 186, 1))
+  }
+
 </style>
