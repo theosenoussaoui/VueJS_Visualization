@@ -1,5 +1,5 @@
 <template>
-  <div class="footer uk-light">
+  <div class="footer uk-light uk-text-center">
     <button class="uk-button uk-button-default" type="button">Liste des pays disponibles</button>
     <div uk-dropdown>
       <ul class="uk-nav uk-dropdown-nav">
@@ -40,16 +40,16 @@
 
         <div class="uk-text-center">
           <button class="uk-button uk-button-default uk-margin-small-right">
-            <img src="img/logo_couleur.png" alt="Logo Couleur Daily Map" width="150" />
+            <img src="img/vacances.jpg" alt="Vacances" height="100" />
           </button>
           <button class="uk-button uk-button-default uk-margin-small-right">
-            <img src="img/logo_couleur.png" alt="Logo Couleur Daily Map" width="150" />
+            <img src="img/education.jpg" alt="Education" height="100" />
           </button>
           <button class="uk-button uk-button-default uk-margin-small-right">
-            <img src="img/logo_couleur.png" alt="Logo Couleur Daily Map" width="150" />
+            <img src="img/business.jpg" alt="Business" height="100" />
           </button>
           <button class="uk-button uk-button-default uk-margin-small-right">
-            <img src="img/logo_couleur.png" alt="Logo Couleur Daily Map" width="150" />
+            <img src="img/news.jpg" alt="News" height="100" />
           </button>
 
           <hr class="uk-margin-top">

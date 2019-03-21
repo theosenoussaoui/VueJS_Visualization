@@ -8,6 +8,8 @@
   import * as am4maps from "@amcharts/amcharts4/maps";
   import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
   import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+  import am4lang_fr_FR from "@amcharts/amcharts4/lang/fr_FR";
+import { log } from 'util';
 
   am4core.useTheme(am4themes_animated);
 
@@ -16,6 +18,8 @@
     mounted() {
       // Create map instance
       var chart = am4core.create("chartdiv", am4maps.MapChart);
+      console.log(chart);
+      chart.language.locale = am4lang_fr_FR;
 
       // Options
       chart.seriesContainer.draggable = false;
@@ -77,7 +81,8 @@
       button.width = 26;
       button.fill = "#46C3CD";
       button.background.fill = "#FFFFFF";
-      button.background.hoverOptions.fill = "#333333";
+      // button.background.hoverOptions.fill = "#46C3CD";
+      console.log(button);
       button.align = "right";
       button.marginRight = 15;
       button.events.on("hit", function() {
