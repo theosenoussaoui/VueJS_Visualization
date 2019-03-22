@@ -405,7 +405,7 @@ export default {
       gridCardFooter.classList.add("uk-card-footer");
 
       const gridCardFooterA = document.createElement("a");
-      gridCardFooterA.setAttribute("href", "#\" + articlesInternational.articles[0].url + ");
+      gridCardFooterA.setAttribute("href", "" + articlesInternational.articles[0].url + "");
       gridCardFooterA.classList.add("uk-button", "uk-button-text");
       gridCardFooterA.innerHTML = "Lire l'article";
 
