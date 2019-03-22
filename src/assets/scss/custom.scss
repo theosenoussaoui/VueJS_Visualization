@@ -87,15 +87,17 @@ footer {
   border-color : #e5e5e5;
 }
 
+.uk-padding-large > h3 {
+  padding-left: 100px;
+}
 
-@font-face font-family: 'CenturyGothic'
-src: url('../fonts/CenturyGothic.ttf') format('truetype')
-/* Safari, Android, iOS */
+.uk-tab::before {
+  border: 0;
+}
 
-@font-face font-family: 'CenturyGothicBold'
-src: url('../fonts/CenturyGothic - Bold.ttf') format('truetype')
-/* Safari, Android, iOS */
-
-@font-face font-family: 'CenturyGothicItalic'
-src: url('../fonts/CenturyGothic - Italic.ttf') format('truetype')
-/* Safari, Android, iOS */
+.title {
+  color: #19BABA;
+  font-family: century-gothic, Arial, sans-serif;
+  font-weight: 700;
+  padding-left: 100px;
+}

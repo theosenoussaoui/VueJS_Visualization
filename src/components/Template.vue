@@ -8,21 +8,20 @@
 </template>
 
 <script>
-  import Navbar from './Navbar.vue'
-//  import Container from './Container.vue'
-  import Footer from './Footer.vue'
-  import MapChart from './MapChart'
-  
-  export default {
-    name: 'app',
-    components: {
-      Navbar,
-//      Container,
-      Footer,
-      MapChart
-    }
-  }
 
+import Navbar from "./Navbar.vue";
+//  import Container from './Container.vue'
+import Footer from "./Footer.vue";
+import MapChart from "./MapChart";
+export default {
+  name: "Template",
+  components: {
+    Navbar,
+    //      Container,
+    Footer,
+    MapChart
+  }
+};
 </script>
 
 <style scoped>
@@ -46,5 +45,5 @@ a {
 </style>
 
 <style lang="scss" scoped>
-  @import "../assets/scss/custom.scss"
+  @import "../assets/scss/custom.scss";
 </style>
