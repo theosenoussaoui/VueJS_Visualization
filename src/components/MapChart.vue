@@ -375,41 +375,44 @@ export default {
         "uk-grid"
       );
 
-      const gridElement = document.createElement("div");
-
-      const gridCard = document.createElement("div");
-      gridCard.classList.add("uk-card", "uk-card-default", "uk-margin-small");
-
-      const gridCardHeader = document.createElement("div");
-      gridCardHeader.classList.add("uk-card-header");
-
-      const gridCardTitle = document.createElement("div");
-      gridCardTitle.classList.add("uk-grid-small", "uk-flex-middle");
-      gridCardTitle.setAttribute("uk-grid", "");
-
-      const gridWidthExtends = document.createElement("div");
-      gridWidthExtends.classList.add("uk-width-expands");
-
-      const h3Title = document.createElement("h3");
-      h3Title.classList.add("uk-card-title", "uk-margin-remove-bottom");
-      h3Title.innerHTML = articlesInternational.articles[0].source['domain'];
-
-      const gridCardBody = document.createElement("div");
-      gridCardBody.classList.add("uk-card-body");
-
-      const gridCardBodyP = document.createElement("p");
-
-      gridCardBodyP.innerHTML = articlesInternational.articles[0].name;
-
-      const gridCardFooter = document.createElement("div");
-      gridCardFooter.classList.add("uk-card-footer");
-
-      const gridCardFooterA = document.createElement("a");
-      gridCardFooterA.setAttribute("href", "" + articlesInternational.articles[0].url + "");
-      gridCardFooterA.classList.add("uk-button", "uk-button-text");
-      gridCardFooterA.innerHTML = "Lire l'article";
-
       for (var i = 0; i < 10; i++) {
+        console.log(i);
+        const gridElement = document.createElement("div");
+
+        const gridCard = document.createElement("div");
+        gridCard.classList.add("uk-card", "uk-card-default", "uk-margin-small");
+
+        const gridCardHeader = document.createElement("div");
+        gridCardHeader.classList.add("uk-card-header");
+
+        const gridCardTitle = document.createElement("div");
+        gridCardTitle.classList.add("uk-grid-small", "uk-flex-middle");
+        gridCardTitle.setAttribute("uk-grid", "");
+
+        const gridWidthExtends = document.createElement("div");
+        gridWidthExtends.classList.add("uk-width-expands");
+
+        const h3Title = document.createElement("h3");
+        h3Title.classList.add("uk-card-title", "uk-margin-remove-bottom");
+        h3Title.innerHTML = articlesDivertissement.articles[i].source["domain"];
+
+        const gridCardBody = document.createElement("div");
+        gridCardBody.classList.add("uk-card-body");
+
+        const gridCardBodyP = document.createElement("p");
+
+        gridCardBodyP.innerHTML = articlesDivertissement.articles[i].name;
+
+        const gridCardFooter = document.createElement("div");
+        gridCardFooter.classList.add("uk-card-footer");
+
+        const gridCardFooterA = document.createElement("a");
+        gridCardFooterA.setAttribute(
+          "href",
+          "" + articlesDivertissement.articles[i].url + " target=\"_blank\""
+        );
+        gridCardFooterA.classList.add("uk-button", "uk-button-text");
+        gridCardFooterA.innerHTML = "Lire l'article";
         gridCardHeader.appendChild(gridCardTitle);
         gridCardBody.appendChild(gridCardBodyP);
         gridCardFooter.appendChild(gridCardFooterA);
@@ -420,10 +423,9 @@ export default {
         gridCard.appendChild(gridCardBody);
         gridCard.appendChild(gridCardFooter);
         gridElement.appendChild(gridCard);
-      }
-
         categoryGrid.appendChild(gridElement);
-        liSwitcher.appendChild(categoryGrid);
+      }
+      liSwitcher.appendChild(categoryGrid);
       // liAccordion.appendChild(liAccordionA);
       // liAccordion.appendChild(liAccordionDiv);
       // ulAccordion.appendChild(liAccordion);
