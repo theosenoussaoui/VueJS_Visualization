@@ -15,7 +15,7 @@
           <a href="#faq" uk-toggle>FAQ</a>
         </li>
         <li>
-          <a href="mailto:theosen95@gmail.com">Contact</a>
+          <a href="mailto:theosen95@gmail.com" target="_blank">Contact</a>
         </li>
       </ul>
     </div>
@@ -51,7 +51,7 @@
                 <a href="#faq" uk-toggle>FAQ</a>
               </li>
               <li>
-                <a href="mailto:theosen95@gmail.com">Contact</a>
+                <a href="mailto:theosen95@gmail.com" target="_blank">Contact</a>
               </li>
             </ul>
           </div>
@@ -91,7 +91,7 @@
                 <a href="#faq" uk-toggle>FAQ</a>
               </li>
               <li>
-                <a href="mailto:theosen95@gmail.com">Contact</a>
+                <a href="mailto:theosen95@gmail.com" target="_blank">Contact</a>
               </li>
             </ul>
           </div>
@@ -160,7 +160,7 @@
                 <a href="#faq" uk-toggle>FAQ</a>
               </li>
               <li>
-                <a href="mailto:theosen95@gmail.com">Contact</a>
+                <a href="mailto:theosen95@gmail.com" target="_blank">Contact</a>
               </li>
             </ul>
           </div>

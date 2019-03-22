@@ -2,30 +2,9 @@
   <div class="footer uk-light uk-text-center">
     <button class="uk-button uk-button-default" type="button">Liste des pays disponibles</button>
     <div uk-dropdown>
-      <ul class="uk-nav uk-dropdown-nav">
-        <!--        <li class="uk-active"><a href="#">Active</a></li>-->
+      <ul class="uk-nav uk-dropdown-nav" id="listCountry">
         <li>
-          <a href="#">Item</a>
-        </li>
-        <!--        <li class="uk-nav-header">Header</li>-->
-        <li>
-          <a href="#">Item</a>
-        </li>
-        <li>
-          <a href="#">Item</a>
-        </li>
-        <li>
-          <a href="#">Item</a>
-        </li>
-        <li>
-          <a href="#">Item</a>
-        </li>
-        <li>
-          <a href="#">Item</a>
-        </li>
-        <!--        <li class="uk-nav-divider"></li>-->
-        <li>
-          <a href="#">Item</a>
+          <a href="#test">{{ nameFr }}</a>
         </li>
       </ul>
     </div>
@@ -443,6 +422,19 @@
 </template>
 
 <script>
+import { objectCountries } from "../assets/js/objectCountries.js";
+var str ='';
+for (const key in objectCountries) {
+  let value = objectCountries[key];
+
+  if (objectCountries.hasOwnProperty(key)) {
+    console.log(objectCountries[key]);
+    str += "<li>" + objectCountries[key]['nameFr'] + "</li>";
+  }
+}
+
+document.getElementById("listCountry").innerHTML = str;
+
 export default {
   name: "Footer"
 };

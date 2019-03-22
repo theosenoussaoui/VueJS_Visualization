@@ -107,7 +107,6 @@
           if (objectCountries.hasOwnProperty(countryName))
           {
             console.log(objectCountries[countryName]);
-
             try
             {
                 const countryCode = objectCountries[countryName]['id'];
