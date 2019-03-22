@@ -9,11 +9,11 @@
     <!-- ----------------------------------------------- -->
 
     <!-- This is a button toggling the modal with the default close button -->
-    <button
+    <!-- <button
       class="uk-button uk-button-default uk-margin-small-right uk-margin-small-left"
       type="button"
       uk-toggle="target: #modal-container"
-    >Bouton modale choix pays</button>
+    >Bouton modale choix pays</button> -->
 
     <!-- This is the modal with the default close button -->
     <div id="modal-container" class="uk-modal-container" uk-modal>
