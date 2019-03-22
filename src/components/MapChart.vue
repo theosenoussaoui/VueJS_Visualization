@@ -409,8 +409,10 @@ export default {
         const gridCardFooterA = document.createElement("a");
         gridCardFooterA.setAttribute(
           "href",
-          "" + articlesDivertissement.articles[i].url + " target=\"_blank\""
+          "" + articlesDivertissement.articles[i].url + ""
         );
+        gridCardFooterA.setAttribute(
+          "target","_blank");
         gridCardFooterA.classList.add("uk-button", "uk-button-text");
         gridCardFooterA.innerHTML = "Lire l'article";
         gridCardHeader.appendChild(gridCardTitle);
