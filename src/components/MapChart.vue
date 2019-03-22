@@ -17,7 +17,6 @@
     name: 'MapChart',
     mounted()
     {
-      const secretKey = '474d3500db4940e2945a33eb7788710d';
       const objectCategories = [
         {
             id:     "w",
@@ -107,42 +106,41 @@
           if (objectCountries.hasOwnProperty(countryName))
           {
             console.log(objectCountries[countryName]);
-            try
-            {
-                const countryCode = objectCountries[countryName]['id'];
-                const url = "https://api.ozae.com/gnw/articles?date=20180701__20180702&edition=" + countryCode + "&key=" + secretKey + "&hard_limit=50";
-                const response = await fetch(url);
+            const countryCode = objectCountries[countryName]['id'];
+            const countryNameFr = objectCountries[countryName]['nameFr'];
 
-                if (response.ok)
-                {
-                    let data = await response.json();
-                    // const fragment = document.createDocumentFragment();
-                    // for (let i = 0; i < data['articles'].length; i++)
-                    // {
-                    //     const div = document.createElement('div');
-                    //     div.innerHTML = data['articles'][i]['name'];
-                    //     fragment.appendChild(div);
-                    // }
-                    // document.getElementById('containerFetch').appendChild(fragment);
-                    UIkit.modal.alert('UIkit alert!');
-                    console.log(data);
-                }
-                else
-                {
-                    console.error('Retour du serveur : ', response.status);
-                    // const div = document.createElement('div');
-                    // div.innerHTML = "Retour du serveur : " + response.status;
-                    // document.getElementById('containerFetch').appendChild(div);
-                }
-            }
-            catch (error)
-            {
-                console.log(error);
-                // const div = document.createElement('div');
-                // div.innerHTML = error;
-                // document.getElementById('containerFetch').appendChild(div);
-            }
+            let [
+              articlesInternational,
+              articlesNational,
+              articlesEconomie,
+              articlesScienceTech,
+              articlesDivertissement,
+              articlesSports,
+              articlesSante,
+              articlesUne
+            ] = await Promise.all([
+              getArticles(countryCode, 'w'),
+              getArticles(countryCode, 'n'),
+              getArticles(countryCode, 'b'),
+              getArticles(countryCode, 't'),
+              getArticles(countryCode, 'e'),
+              getArticles(countryCode, 's'),
+              getArticles(countryCode, 'm'),
+              getArticles(countryCode, '_')
+            ]);
 
+            console.log('ok');
+
+            console.log(articlesInternational);
+            console.log(articlesNational);
+            console.log(articlesEconomie);
+            console.log(articlesScienceTech);
+            console.log(articlesDivertissement);
+            console.log(articlesSports);
+            console.log(articlesSante);
+            console.log(articlesUne);
+
+            displayPopup(countryNameFr, articlesInternational, articlesNational, articlesEconomie, articlesScienceTech, articlesDivertissement, articlesSports, articlesSante, articlesUne);
           }
           else
           {
@@ -174,6 +172,220 @@
 
       // Bind "fill" property to "fill" key in data
       polygonTemplate.propertyFields.fill = "fill";
+
+      async function getArticles(countryCode, topic)
+      {
+        try
+        {
+          const secretKey       = '474d3500db4940e2945a33eb7788710d';
+          const date            = new Date();
+
+          //date du jour
+          const day             = (date.getDate().toString().length == 1) ? '0' + date.getDate() : date.getDate();
+          const month           = ((date.getMonth() + 1).toString().length == 1) ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
+          const year            = date.getFullYear();
+          const currentDateDMY  = year + month + day;
+          const currentDate     = new Date(year + '/' + month + '/' + day);
+
+          //date d'il y a un mois
+          let beforeDate        = new Date(currentDate.getTime());
+          beforeDate            = new Date(beforeDate.setMonth(beforeDate.getMonth() - 1));
+          const dayBefore       = (beforeDate.getDate().toString().length == 1) ? '0' + beforeDate.getDate() : beforeDate.getDate();
+          const monthBefore     = ((beforeDate.getMonth() + 1).toString().length == 1) ? '0' + (beforeDate.getMonth() + 1) : beforeDate.getMonth() + 1;
+          const yearBefore      = beforeDate.getFullYear();
+          const beforeDateDMY   = yearBefore + monthBefore + dayBefore;
+
+          const url = "https://api.ozae.com/gnw/articles?date="
+                    + beforeDateDMY
+                    + "__"
+                    + currentDateDMY
+                    + "&edition="
+                    + countryCode
+                    + "&key="
+                    + secretKey
+                    + "&hard_limit=10"
+                    + "&topic="
+                    + topic;
+
+          const response = await fetch(url);
+
+          if (response.ok)
+          {
+              let data = await response.json();
+              // const fragment = document.createDocumentFragment();
+              // for (let i = 0; i < data['articles'].length; i++)
+              // {
+              //     const div = document.createElement('div');
+              //     div.innerHTML = data['articles'][i]['name'];
+              //     fragment.appendChild(div);
+              // }
+              // document.getElementById('containerFetch').appendChild(fragment);
+              // UIkit.modal.alert('UIkit alert!');
+              // console.log(data);
+              return data;
+          }
+          else
+          {
+              console.error('Retour du serveur : ', response.status);
+              return response.status;
+              // const div = document.createElement('div');
+              // div.innerHTML = "Retour du serveur : " + response.status;
+              // document.getElementById('containerFetch').appendChild(div);
+          }
+        }
+        catch (error)
+        {
+          console.log(error);
+          return error;
+          // const div = document.createElement('div');
+          // div.innerHTML = error;
+          // document.getElementById('containerFetch').appendChild(div);
+        }
+      }
+
+      function displayPopup(countryNameFr, articlesInternational, articlesNational, articlesEconomie, articlesScienceTech, articlesDivertissement, articlesSports, articlesSante, articlesUne)
+      {
+        const modalContainer = document.createElement('div');
+        modalContainer.id = 'modal-container';
+        modalContainer.setAttribute('uk-modal', '');
+        modalContainer.classList.add('uk-modal-container', 'uk-modal', 'uk-open');
+
+        const containerPopup = document.createElement('div');
+        containerPopup.classList.add('uk-modal-dialog', 'uk-modal-body', 'uk-overflow-auto');
+        containerPopup.setAttribute('uk-overflow-auto', '');
+
+        const h2 = document.createElement('h2');
+        h2.classList.add('uk-modal-title');
+        h2.innerHTML = countryNameFr;
+
+        const popupContent = document.createElement('div');
+        popupContent.classList.add('uk-text-center');
+
+        //tabs
+        const ulTabs = document.createElement('ul');
+        ulTabs.classList.add('uk-child-width-expand', 'uk-tab');
+
+        const liTabs1 = document.createElement('li');
+        const liTabs1Button = document.createElement('button');
+        liTabs1Button.classList.add('uk-button', 'uk-button-default', 'uk-margin-small-right');
+        const imgTabs1 = document.createElement('img');
+        imgTabs1.setAttribute('src', 'img/vacances.jpg');
+        imgTabs1.setAttribute('alt', 'Vacances');
+        liTabs1Button.appendChild(imgTabs1);
+        liTabs1.appendChild(liTabs1Button);
+
+        const liTabs2 = document.createElement('li');
+        const liTabs2Button = document.createElement('button');
+        liTabs2Button.classList.add('uk-button', 'uk-button-default', 'uk-margin-small-right');
+        const imgTabs2 = document.createElement('img');
+        imgTabs2.setAttribute('src', 'img/education.jpg');
+        imgTabs2.setAttribute('alt', 'Éducation');
+        liTabs2Button.appendChild(imgTabs2);
+        liTabs2.appendChild(liTabs2Button);
+
+        const liTabs3 = document.createElement('li');
+        const liTabs3Button = document.createElement('button');
+        liTabs3Button.classList.add('uk-button', 'uk-button-default', 'uk-margin-small-right');
+        const imgTabs3 = document.createElement('img');
+        imgTabs3.setAttribute('src', 'img/business.jpg');
+        imgTabs3.setAttribute('alt', 'Business');
+        liTabs3Button.appendChild(imgTabs3);
+        liTabs3.appendChild(liTabs3Button);
+
+        const liTabs4 = document.createElement('li');
+        const liTabs4Button = document.createElement('button');
+        liTabs4Button.classList.add('uk-button', 'uk-button-default', 'uk-margin-small-right');
+        const imgTabs4 = document.createElement('img');
+        imgTabs4.setAttribute('src', 'img/news.jpg');
+        imgTabs4.setAttribute('alt', 'News');
+        liTabs4Button.appendChild(imgTabs4);
+        liTabs4.appendChild(liTabs4Button);
+
+        ulTabs.appendChild(liTabs1);
+        ulTabs.appendChild(liTabs2);
+        ulTabs.appendChild(liTabs3);
+        ulTabs.appendChild(liTabs4);
+
+        //switcher
+        const ulSwitcher = document.createElement('ul');
+        ulSwitcher.classList.add('uk-switcher', 'uk-margin');
+
+        const liSwitcher = document.createElement('li');
+
+        const ulAccordion = document.createElement('ul');
+        ulAccordion.setAttribute('uk-accordion', '')
+        ulAccordion.classList.add('uk-accordion');
+
+        const liAccordion = document.createElement('li');
+
+        const liAccordionA = document.createElement('a');
+        liAccordionA.setAttribute('href', '#');
+        liAccordionA.classList.add('uk-accordion-title');
+        liAccordionA.innerHTML = "Catégorie";
+
+        const liAccordionDiv = document.createElement('div');
+        liAccordionDiv.setAttribute('hidden', '');
+        liAccordionDiv.setAttribute('aria-hidden', 'true');
+        liAccordionDiv.classList.add('uk-accordion-content');
+
+        const categoryGrid = document.createElement('div');
+        categoryGrid.setAttribute('uk-grid', '');
+        categoryGrid.classList.add('uk-child-width-1-3', 'uk-grid-small', 'uk-grid-match', 'uk-grid');
+
+        const gridElement = document.createElement('div');
+
+        const gridCard = document.createElement('div');
+        gridCard.classList.add('uk-card', 'uk-card-default', 'uk-margin-small');
+
+        const gridCardHeader = document.createElement('div');
+        gridCardHeader.classList.add('uk-card-header');
+
+        const gridCardTitle = document.createElement('div');
+        gridCardTitle.classList.add('uk-grid-smal', 'uk-flex-middle', 'uk-grid');
+        gridCardTitle.innerHTML = "Titre";
+
+        const gridCardBody = document.createElement('div');
+        gridCardBody.classList.add('uk-card-body');
+
+        const gridCardBodyP = document.createElement('p');
+
+        gridCardBodyP.innerHTML = "Contenu";
+
+        const gridCardFooter = document.createElement('div');
+        gridCardFooter.classList.add('uk-card-footer');
+
+        const gridCardFooterA = document.createElement('a');
+        gridCardFooterA.setAttribute('href', '#');
+        gridCardFooterA.classList.add('uk-button', 'uk-button-text');
+        gridCardFooterA.innerHTML = "Lire l'article";
+
+        gridCardHeader.appendChild(gridCardTitle);
+        gridCardBody.appendChild(gridCardBodyP);
+        gridCardFooter.appendChild(gridCardFooterA);
+        gridCard.appendChild(gridCardHeader);
+        gridCard.appendChild(gridCardBody);
+        gridCard.appendChild(gridCardFooter);
+        gridElement.appendChild(gridCard);
+        categoryGrid.appendChild(gridElement);
+        liAccordionDiv.appendChild(categoryGrid);
+        liAccordion.appendChild(liAccordionA);
+        liAccordion.appendChild(liAccordionDiv);
+        ulAccordion.appendChild(liAccordion);
+        liSwitcher.appendChild(ulAccordion);
+        ulSwitcher.appendChild(liSwitcher);
+
+        popupContent.appendChild(ulTabs);
+        popupContent.appendChild(ulSwitcher);
+
+        containerPopup.appendChild(h2);
+        containerPopup.appendChild(popupContent);
+
+        modalContainer.appendChild(containerPopup);
+
+        console.log(modalContainer.innerHTML);
+        UIkit.modal(modalContainer.innerHTML).show();
+        // UIkit.modal.dialog(modalContainer.innerHTML);
+      }
     }
   }
 
