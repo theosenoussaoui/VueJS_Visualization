@@ -4,7 +4,7 @@ export const objectCountries = {
       "nameFr": "France"
     },
     "United States": {
-      "id":     "us",
+      "id":     "us-ny",
       "nameFr": "États-Unis"
     },
     "United Kingdom": {
