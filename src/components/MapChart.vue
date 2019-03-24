@@ -383,7 +383,7 @@ export default {
         gridCard.classList.add("uk-card", "uk-card-default", "uk-margin-small");
 
         const gridCardHeader = document.createElement("div");
-        gridCardHeader.classList.add("uk-card-header");
+        gridCardHeader.classList.add("uk-card-header", "uk-text-truncate");
 
         const gridCardTitle = document.createElement("div");
         gridCardTitle.classList.add("uk-grid-small", "uk-flex-middle");
@@ -394,7 +394,7 @@ export default {
 
         const h3Title = document.createElement("h3");
         h3Title.classList.add("uk-card-title", "uk-margin-remove-bottom");
-        h3Title.innerHTML = articlesDivertissement.articles[i].source["domain"];
+        h3Title.innerHTML = articlesDivertissement.articles[i].name;
 
         const gridCardBody = document.createElement("div");
         gridCardBody.classList.add("uk-card-body");
